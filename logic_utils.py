@@ -35,15 +35,8 @@ def check_guess(guess, secret):
 
     outcome examples: "Win", "Too High", "Too Low"
     """
-    try:
-        guess_value = int(guess)
-        secret_value = int(secret)
-    except (TypeError, ValueError):
-        if str(guess) == str(secret):
-            return "Win"
-        if str(guess) > str(secret):
-            return "Too High"
-        return "Too Low"
+    guess_value = int(guess)
+    secret_value = int(secret)
 
     if guess_value == secret_value:
         return "Win"
