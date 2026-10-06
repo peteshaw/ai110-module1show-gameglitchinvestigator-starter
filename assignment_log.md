@@ -72,3 +72,6 @@
  -  additionally, the number of guesses should get smaller as difficulty increases, so easy = 8, normal = 6, easy = 4.
 <p align="left"><img src="screenshots/Bug3-Screenshot.png" width="480"  /></p>
 
+4. New Game Button not initializing all elements of game
+ - Expected to see the "game over" message to disappear and a new game to start.
+ - Instead, the game interface did not reset, and a game was unable to be played. This only occured intermittently.
