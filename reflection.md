@@ -14,9 +14,7 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| 50    | should say higher | said lower      | none |
-| press 'new game' button' | star a new game | nothing happens | none |
-| select 'hard' level | range should be 1 to 100 | range is 1 to 50 | none |
+| 50    | should say higher | the game said lower      | none |
 
 
 ---
