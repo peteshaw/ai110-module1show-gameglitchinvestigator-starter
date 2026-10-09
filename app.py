@@ -100,9 +100,9 @@ if submit:
             if outcome == "Win":
                 st.warning("🎉 Correct!")
             elif outcome == "Too High":
-                st.warning("📈 Go HIGHER!")
-            else:
                 st.warning("📉 Go LOWER!")
+            else:
+                st.warning("📈 Go HIGHER!")
 
         st.session_state.score = update_score(
             current_score=st.session_state.score,

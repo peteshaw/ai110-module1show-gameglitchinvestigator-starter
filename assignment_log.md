@@ -75,3 +75,7 @@
 4. New Game Button not initializing all elements of game
  - Expected to see the "game over" message to disappear and a new game to start.
  - Instead, the game interface did not reset, and a game was unable to be played. This only occured intermittently.
+
+### 2.0 Refactor nd Fix Bugs
+1. Moved logic of code to 
+
