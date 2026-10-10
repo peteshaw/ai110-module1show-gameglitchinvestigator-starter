@@ -1,9 +1,14 @@
-from logic_utils import check_guess, get_range_for_difficulty, parse_guess
+from logic_utils import check_guess, get_attempt_limit, get_range_for_difficulty, parse_guess
 
 def test_difficulty_ranges():
     assert get_range_for_difficulty("Easy") == (1, 20)
     assert get_range_for_difficulty("Normal") == (1, 50)
     assert get_range_for_difficulty("Hard") == (1, 100)
+
+def test_attempt_limits():
+    assert get_attempt_limit("Easy") == 8
+    assert get_attempt_limit("Normal") == 6
+    assert get_attempt_limit("Hard") == 4
 
 def test_winning_guess():
     # If the secret is 50 and guess is 50, it should be a win

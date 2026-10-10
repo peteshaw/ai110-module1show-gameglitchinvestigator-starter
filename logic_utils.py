@@ -10,6 +10,17 @@ def get_range_for_difficulty(difficulty: str):
     return 1, 100
 
 
+def get_attempt_limit(difficulty: str):
+    """Return the number of guesses allowed for a given difficulty."""
+    if difficulty == "Easy":
+        return 8
+    if difficulty == "Normal":
+        return 6
+    if difficulty == "Hard":
+        return 4
+    return 6
+
+
 def parse_guess(raw: str):
 # fix: asked claude to move all logic to this file, probably overkill, and this was the result. 
     """

@@ -25,15 +25,23 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [X] Describe the game's purpose.
+  - This game is a demo of the streamlit framework, and is a simple number guessing game, where you can choose 1 of 3 levels, and try to guess a secret number within a limited number of guesses. 
+- [X] Detail which bugs you found.
+  - As I detailed in the reflection.md file, I found at least 4 bugs.  
+      1. The hints were in the reverse directions
+      2. The numeric guesses were not getting compared correctly with the secret.
+      3. The state was not getting properly reset after a finished game.
+      4. The count of guesses left was not being correctly incremented. 
+- [X] Explain what fixes you applied.
+    - Using Claude code, I was able to move the logic of the applicaiton to the logic_utils.py file.  I was also able to create a number of tests for the application to verify that it all was working properly. 
+  - 
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
+1. Select the difficulty from the dropdown on the left hand side of the application.  There are three levels, easy, medium, and hard.  Easy has a secret value of 1 to 20, medium is 1 to 50, and hard is 1 to 100.  For each level you get a number of guesses.  Easy you get 8 guesses, medium is 6 guessses, and hard is 4 guesses.
 2. <!-- Describe this step -->
 3. <!-- Describe this step -->
 4. <!-- Describe this step -->
