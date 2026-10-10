@@ -21,14 +21,12 @@ def get_attempt_limit(difficulty: str):
     return 6
 
 
-def parse_guess(raw: str, low: int | None = None, high: int | None = None):
+def parse_guess(raw: str):
 # fix: asked claude to move all logic to this file, probably overkill, and this was the result. 
     """
     Parse user input into an int guess.
 
-    If low and high are given, guesses outside that inclusive range are rejected.
-
-    Returns: (ok: bool, guess_int: int | None, error_message: str | None)10
+    Returns: (ok: bool, guess_int: int | None, error_message: str | None)
     """
     if raw is None or raw == "":
         return False, None, "Enter a guess."
@@ -40,9 +38,6 @@ def parse_guess(raw: str, low: int | None = None, high: int | None = None):
             value = int(raw)
     except (TypeError, ValueError, OverflowError):
         return False, None, "That is not a number."
-
-    if low is not None and high is not None and not low <= value <= high:
-        return False, None, f"Guess must be between {low} and {high}."
 
     return True, value, None
 
