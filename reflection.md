@@ -13,7 +13,7 @@ Document at least 3 bugs you found. Add rows as needed.
 | # | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |---|-------|-------------------|-----------------|------------------------|
 | 1 | Entered `25` as a guess (debug info showed `22`) | App displays **"Go Lower"** | App displayed **"Go Higher"** | Screenshot: `screenshots/Bug1-Screenshot.png` |
-| 2 | Selected **Normal** difficulty | Range should be **1–50** | Range was **1–100**; also, selecting **Hard** difficulty resulted in a range of **1–50** (inverted/wrong ranges) | Screenshot: `screenshots/Bug2-Screenshot.png` |
+| 2 | Selected **Normal** difficulty | Range should be **1–50** | Range was **1–100**; also, selecting **Hard** difficulty resulted in a range of **1–50** (inverted/wrong ranges), this was caused by the  | Screenshot: `screenshots/Bug2-Screenshot.png` |
 | 3 | Selected **Normal** difficulty | Consistent number of guesses across UI; guesses should decrease as difficulty increases (Easy = 8, Normal = 6, Hard = 4) | Settings showed **8** guesses; blue bar showed **7** (mismatch). Guess count logic also incorrect across difficulties | Screenshot: `screenshots/Bug3-Screenshot.png` |
 | 4 | Clicked **New Game** button | "Game Over" message disappears and a fresh game starts (all game elements re-initialized) | Game interface did not reset and a new game could not be played. Occurred **intermittently** |
 ---
@@ -23,9 +23,9 @@ Document at least 3 bugs you found. Add rows as needed.
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
   - For this assigment I used ChatGPT within Visual Studio Code
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
-  - When I asked Claude to explain the logic of the Parse_Gess function to me, Claud successfully noted the flwaed logic of the function, and then when asked, provided a fix for this issue. 
+  - When I asked Claude to explain the logic of the Parse_Guess function to me, Claud successfully noted the flwaed logic of the function.  The error was that the guess was being passed as a string and then when asked, provided a fix for this issue, which was to provide an integer value on the gui side.
 - Give one example of an AI suggestion you did not accept as written (including what the AI suggested, why you rejected or changed it, and how you verified your version). It does not have to be a suggestion that was wrong: over-engineered, out of scope, harder to read, or a poor fit for this codebase all count.
-- Claude kept wanting the response for a "too high" result to be "Go Higher" in the game UI.  I had to specify that he change the response to "Too High" to "Go Lower"
+- Claude kept wanting the response for a "too high" result to be "Go Higher" in the game UI, specificallly in the Check Guess .  I had to specify that he change the response to "Too High" to "Go Lower", and to create a test to verify this. 
 
 ---
 

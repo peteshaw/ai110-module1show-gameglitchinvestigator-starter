@@ -55,17 +55,18 @@ with st.expander("Developer Debug Info"):
     st.write("Difficulty:", difficulty)
     st.write("History:", st.session_state.history)
 
-raw_guess = st.text_input(
-    "Enter your guess:",
-    key=f"guess_input_{difficulty}"
-)
+# A form submits when Enter is pressed in the text input.
+with st.form("guess_form", border=False):
+    raw_guess = st.text_input(
+        "Enter your guess:",
+        key=f"guess_input_{difficulty}"
+    )
+    submit = st.form_submit_button("Submit Guess 🚀")
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 with col1:
-    submit = st.button("Submit Guess 🚀")
-with col2:
     new_game = st.button("New Game 🔁")
-with col3:
+with col2:
     show_hint = st.checkbox("Show hint", value=True)
 
 if new_game:
@@ -87,7 +88,7 @@ if st.session_state.status != "playing":
 if submit:
     st.session_state.attempts += 1
 
-    ok, guess_int, err = parse_guess(raw_guess)
+    ok, guess_int, err = parse_guess(raw_guess, low, high)
 
     if not ok:
         st.session_state.history.append(raw_guess)

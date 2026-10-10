@@ -42,20 +42,38 @@ It wrote the code, ran away, and now the game is unplayable.
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
 1. Select the difficulty from the dropdown on the left hand side of the application.  There are three levels, easy, medium, and hard.  Easy has a secret value of 1 to 20, medium is 1 to 50, and hard is 1 to 100.  For each level you get a number of guesses.  Easy you get 8 guesses, medium is 6 guessses, and hard is 4 guesses.
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+2. After eelecting a level.  Enter a guess.
+3. Adjust your guess based on the hint, higher or lower.  
+4. If you want to play another game, select a different level and/or press the 'new game' button.
+5. You can choose if you want hints displayed or not with the "Show Hint" checkbox. 
 
-**Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
+**Screenshot** :
+<p align="left"><img src="screenshots/working-app.png" width="480"  /></p>
 
 ## 🧪 Test Results
 
-```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
-```
+(.venv) 📦[peteshaw@ai110 ai110-module1show-gameglitchinvestigator-starter]$ .venv/bin/python -m pytest -v 2>&1 | tail -20
+rootdir: /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter
+plugins: anyio-4.15.1
+collecting ... collected 14 items
+
+tests/test_app_hints.py::test_too_high_guess_shows_go_lower PASSED       [  7%]
+tests/test_app_hints.py::test_too_low_guess_shows_go_higher PASSED       [ 14%]
+tests/test_app_hints.py::test_out_of_range_guess_shows_error PASSED      [ 21%]
+tests/test_game_logic.py::test_difficulty_ranges PASSED                  [ 28%]
+tests/test_game_logic.py::test_attempt_limits PASSED                     [ 35%]
+tests/test_game_logic.py::test_winning_guess PASSED                      [ 42%]
+tests/test_game_logic.py::test_guess_too_high PASSED                     [ 50%]
+tests/test_game_logic.py::test_guess_too_low PASSED                      [ 57%]
+tests/test_game_logic.py::test_numeric_strings_are_compared_by_integer_value PASSED [ 64%]
+tests/test_game_logic.py::test_parse_guess PASSED                        [ 71%]
+tests/test_game_logic.py::test_very_large_numbers PASSED                 [ 78%]
+tests/test_game_logic.py::test_range_check PASSED                        [ 85%]
+tests/test_game_logic.py::test_negative_numbers PASSED                   [ 92%]
+tests/test_game_logic.py::test_decimal_numbers PASSED                    [100%]
+
+============================== 14 passed in 1.27s ==============================
+(.venv) 📦[peteshaw@ai110 ai110-module1show-gameglitchinvestigator-starter]$ ```
 
 ## 🚀 Stretch Features
 

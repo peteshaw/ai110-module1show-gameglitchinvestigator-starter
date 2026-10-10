@@ -23,3 +23,12 @@ def test_too_high_guess_shows_go_lower():
 def test_too_low_guess_shows_go_higher():
     # Guess below the secret should tell the player to go higher
     assert submit_guess(10) == ["Go HIGHER!"]
+
+
+def test_out_of_range_guess_shows_error():
+    at = AppTest.from_file(APP_PATH)
+    at.run()
+    at.text_input[0].input("99999999999999999999")
+    at.button[0].click()
+    at.run()
+    assert [e.value for e in at.error] == ["Guess must be between 1 and 50."]
