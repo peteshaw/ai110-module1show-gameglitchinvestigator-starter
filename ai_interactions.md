@@ -44,7 +44,7 @@
 **Prompt used:**
 
 ```
-<!-- Paste the prompt you gave the AI -->
+Please check all of my code for python readability strandards and add documentation for all functions.
 ```
 
 **Linting output before:**

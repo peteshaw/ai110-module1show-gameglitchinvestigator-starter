@@ -1,3 +1,5 @@
+"""Streamlit front end for the Glitchy Guesser number guessing game."""
+
 import random
 
 import streamlit as st
@@ -9,6 +11,16 @@ from logic_utils import (
     parse_guess,
     update_score,
 )
+
+
+def start_new_game(low, high):
+    """Reset session state and pick a new secret number in [low, high]."""
+    st.session_state.secret = random.randint(low, high)
+    st.session_state.attempts = 0
+    st.session_state.score = 0
+    st.session_state.status = "playing"
+    st.session_state.history = []
+
 
 st.set_page_config(page_title="Glitchy Guesser", page_icon="🎮")
 
@@ -35,11 +47,7 @@ if (
     or st.session_state.active_difficulty != difficulty
 ):
     st.session_state.active_difficulty = difficulty
-    st.session_state.secret = random.randint(low, high)
-    st.session_state.attempts = 0
-    st.session_state.score = 0
-    st.session_state.status = "playing"
-    st.session_state.history = []
+    start_new_game(low, high)
 
 st.subheader("Make a guess")
 
@@ -70,11 +78,7 @@ with col2:
     show_hint = st.checkbox("Show hint", value=True)
 
 if new_game:
-    st.session_state.attempts = 0
-    st.session_state.secret = random.randint(low, high)
-    st.session_state.score = 0
-    st.session_state.status = "playing"
-    st.session_state.history = []
+    start_new_game(low, high)
     st.success("New game started.")
     st.rerun()
 

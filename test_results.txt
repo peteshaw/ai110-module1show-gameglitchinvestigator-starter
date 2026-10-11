@@ -3,21 +3,23 @@ platform linux -- Python 3.13.13, pytest-9.1.1, pluggy-1.6.0 -- /home/peteshaw/d
 cachedir: .pytest_cache
 rootdir: /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter
 plugins: anyio-4.15.1
-collecting ... collected 14 items
+collecting ... collected 16 items
 
-tests/test_app_hints.py::test_too_high_guess_shows_go_lower PASSED       [  7%]
-tests/test_app_hints.py::test_too_low_guess_shows_go_higher PASSED       [ 14%]
-tests/test_app_hints.py::test_out_of_range_guess_shows_error PASSED      [ 21%]
-tests/test_game_logic.py::test_difficulty_ranges PASSED                  [ 28%]
-tests/test_game_logic.py::test_attempt_limits PASSED                     [ 35%]
-tests/test_game_logic.py::test_winning_guess PASSED                      [ 42%]
-tests/test_game_logic.py::test_guess_too_high PASSED                     [ 50%]
-tests/test_game_logic.py::test_guess_too_low PASSED                      [ 57%]
-tests/test_game_logic.py::test_numeric_strings_are_compared_by_integer_value PASSED [ 64%]
-tests/test_game_logic.py::test_parse_guess PASSED                        [ 71%]
-tests/test_game_logic.py::test_very_large_numbers PASSED                 [ 78%]
-tests/test_game_logic.py::test_range_check PASSED                        [ 85%]
-tests/test_game_logic.py::test_negative_numbers PASSED                   [ 92%]
-tests/test_game_logic.py::test_decimal_numbers PASSED                    [100%]
+tests/test_app_hints.py::test_too_high_guess_shows_go_lower PASSED       [  6%]
+tests/test_app_hints.py::test_too_low_guess_shows_go_higher PASSED       [ 12%]
+tests/test_app_hints.py::test_out_of_range_guess_shows_error PASSED      [ 18%]
+tests/test_game_logic.py::test_difficulty_ranges PASSED                  [ 25%]
+tests/test_game_logic.py::test_attempt_limits PASSED                     [ 31%]
+tests/test_game_logic.py::test_winning_guess PASSED                      [ 37%]
+tests/test_game_logic.py::test_guess_too_high PASSED                     [ 43%]
+tests/test_game_logic.py::test_guess_too_low PASSED                      [ 50%]
+tests/test_game_logic.py::test_numeric_strings_are_compared_by_integer_value PASSED [ 56%]
+tests/test_game_logic.py::test_parse_guess PASSED                        [ 62%]
+tests/test_game_logic.py::test_very_large_numbers PASSED                 [ 68%]
+tests/test_game_logic.py::test_range_check PASSED                        [ 75%]
+tests/test_game_logic.py::test_negative_numbers PASSED                   [ 81%]
+tests/test_game_logic.py::test_decimal_numbers PASSED                    [ 87%]
+tests/test_game_logic.py::test_win_score_drops_with_each_attempt PASSED  [ 93%]
+tests/test_game_logic.py::test_wrong_guesses_always_lose_points PASSED   [100%]
 
-============================== 14 passed in 1.16s ==============================
+============================== 16 passed in 1.13s ==============================
