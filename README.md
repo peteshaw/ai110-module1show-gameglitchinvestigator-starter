@@ -39,14 +39,14 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📸 Demo Walkthrough
 
-Describe your fixed game in numbered steps so a reader can follow along without watching a video:
-
-1. Select the difficulty from the dropdown on the left hand side of the application.  There are three levels, easy, medium, and hard.  Easy has a secret value of 1 to 20, medium is 1 to 50, and hard is 1 to 100.  For each level you get a number of guesses.  Easy you get 8 guesses, medium is 6 guessses, and hard is 4 guesses.
-2. After eelecting a level.  Enter a guess.
-3. Adjust your guess based on the hint, higher or lower.  
-4. If you want to play another game, select a different level and/or press the 'new game' button.
-5. You can choose if you want hints displayed or not with the "Show Hint" checkbox. 
-
+1. User selects difficulty of Normal
+2. User enters a guess of 40
+3. Game returns "Too Low"
+4. User enters a guess of 48, and the game shows "Too High"
+5. Score updates correctly after each guess
+6. Game ends after the correct guess OR
+7. Game ends after 6 incorrect guesses
+  
 **Screenshot** :
 <p align="left"><img src="screenshots/working-app.png" width="480"  /></p>
 
